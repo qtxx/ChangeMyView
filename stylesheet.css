@@ -156,7 +156,7 @@ Release date: May 5th, 2015 */
 
 	#sr-header-area:hover .drop-choices a { color: #000!important; }
 	#sr-header-area:hover .dropdown.srdrop .selected { color: #fff!important; }
-	#sr-header-area .drop-choices.srdrop { margin-left: 0; border-top: 0; border-left: 0; z-index: 201; margin-top: -6px; }
+	#sr-header-area .drop-choices.srdrop { margin-left: 0; border-top: 0; border-left: 0; z-index: 201; margin-top: -6px; height: 500px; overflow-y: scroll; }
 
 	#srList { position: fixed; z-index: 2147483647; }
 	.res #srList { position: fixed; padding: 3px; top: 23px; left: 0; border: none; background-color: #FFF;  z-index: 2147483647; }
@@ -167,6 +167,8 @@ Release date: May 5th, 2015 */
 
 	.res #RESShortcuts { color: rgba(255,255,255,.5); }
 	.res #RESShortcutsEditContainer { display: none; }
+
+	#RESSubredditGroupDropdown { position: fixed!important; padding: 3px!important; top: 23px!important; border: none!important; background-color: #FFF!important;  z-index: 2147483647!important; }
 
 	.pinHeader-subanduser #sr-header-area { top: 0!important; z-index: 2147483650!important; }
 	.pinHeader-subanduser #header { z-index: 2147483646!important; }
@@ -223,6 +225,7 @@ Release date: May 5th, 2015 */
 	#header-bottom-right #modmail {
 		margin: 0;
 		top: 0;
+vertical-align: top;
 		width: 35px;
 		height: 31px;
 		border-right: 1px solid rgba(225,255,255,.25); }
@@ -283,7 +286,7 @@ Release date: May 5th, 2015 */
 	.RESDropdownList a,
 	.RESDropdownList a:visited { color: #000!important; font-weight: normal!important; }
 
-	body:not(.loggedin) #header-bottom-right .flat-list { position: relative; top: 12px; }
+	body:not(.loggedin) #header-bottom-right .flat-list { position: relative; top: 0; }
 	body:not(.loggedin) #header-bottom-right .user { min-width: 300px; }
 
 	#RESConsoleContainer { z-index: 2147483650!important; }
@@ -345,7 +348,7 @@ Release date: May 5th, 2015 */
 		background: #fff;
 		border: 0;
 		overflow: visible;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 		-webkit-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
 		  -moz-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
 		  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1); }
@@ -362,7 +365,7 @@ Release date: May 5th, 2015 */
 	.link .entry .tagline time:not(.edited-timestamp)::after { content: " by "; font-size: x-small; }
 	.link .entry .tagline time.edited-timestamp[title]:after { content: " (" attr(title) ")"; font-size: 90%; }
 	.link .entry .tagline time, .entry .tagline a, .tagline span { font-size: x-small; }
-
+.tagline .edited-timestamp { margin-right: 5px; }
 	a.voteWeight { padding: 0 5px; margin-left: 5px; color: #439b4a!important; }
 
 	.link .flat-list {
@@ -883,10 +886,10 @@ Release date: May 5th, 2015 */
 	.side .md h1:nth-of-type(2) {
 		position: relative;
 		width: 282px;
-		font-size: 14px;
-		line-height: 27px;
+		font-size: 16px;
+		line-height: 30px;
 		margin: 20px 0 0 9px;
-		font-weight: bold;
+		font-weight: normal;
 		background: #49c0f0;
 		background: -moz-linear-gradient(-45deg,#49c0f0 0,#1a82ba 99%);
 		background: -webkit-linear-gradient(-45deg,#49c0f0 0,#1a82ba 99%);
@@ -894,7 +897,7 @@ Release date: May 5th, 2015 */
 		background: -ms-linear-gradient(-45deg,#49c0f0 0,#1a82ba 99%);
 		background: linear-gradient(135deg,#49c0f0 0,#1a82ba 99%);
 		color: #fff;
-		text-indent: 50px; }
+		text-indent: 60px; }
 
 	.side .md h1:nth-of-type(1):before,
 	.side .md h1:nth-of-type(2):before {
@@ -905,7 +908,7 @@ Release date: May 5th, 2015 */
 		background: url(%%cmv-spritesheet%%) -163px -181px no-repeat rgba(255,255,255,.1);
 		color: #000;
 		z-index: 260;
-		margin-left: -50px;
+		margin-left: -60px;
 		border-right: 1px solid #eee; }
 
 	.side .md h1:nth-of-type(1):after,
@@ -1089,7 +1092,7 @@ Release date: May 5th, 2015 */
 
 	.side .md h6:nth-of-type(1) a:after { border-width: 0 0 43px 43px; }
 
-	.side .md h6 + p {
+	.side .md h6 + p { padding-top: 15px;
 		-webkit-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
 		  -moz-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
 		  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1); }
@@ -1531,6 +1534,7 @@ Release date: May 5th, 2015 */
 
 	.commentarea .menuarea {
 		border: none;
+overflow: visible;
 		margin: 0 0 0 8px;
 		background: #fcfcfc;
 		line-height: 25px;
@@ -1570,6 +1574,8 @@ Release date: May 5th, 2015 */
 	.markdownEditor-wrapper { padding-top: 20px; margin-left: 20px; }
 
 	.menuarea .spacer { display: block; margin-right: 0; margin-bottom: 0; }
+
+.drop-choices a.choice { text-indent: 0; padding: 5px 15px; }
 
 	.help-hoverable { display: none; }
 
@@ -1942,6 +1948,7 @@ border-bottom: 1px solid #dcdcdc;
 	.search-page .raisedbox #search input[type=text] { margin-left: 0; }
 
 	.search-page .menuarea {
+overflow: visible;
 		position: relative;
 		padding: 5px 10px;
 		margin: 1px 0 15px 8px;
@@ -1989,7 +1996,7 @@ border-bottom: 1px solid #dcdcdc;
 		border-radius: 0;
 		background: #FAFAFA;
 		color: #444;
-		font-weight: bold; }
+		font-weight: normal; }
 
 	.flair-leader,
 	.flair-topten { position: relative; padding-right: 20px; }
@@ -2062,7 +2069,7 @@ border-bottom: 1px solid #dcdcdc;
 		padding: 5px;
 		border: 1px solid #dc485c;
 		background: #e05d6f;
-		content: "Please report comments that violate the rules. ";
+		content: "Please report rule-breaking comments/submissions. ";
 		text-align: center;
 		font-size: 12px;
 		color: #fff;
@@ -2175,18 +2182,11 @@ border-bottom: 1px solid #dcdcdc;
 		content: "You have been linked to a read-only version of CMV. Please respect the community by not voting.";
 		display: block;
 		font-weight: bold;
-		background-color: #F6E69F;
-		padding: 5px 10px;
-		margin: 5px 0px 15px 0px;
-		border: 1px solid orange;
-		border-left: 0;
-		font-size: small; }
-
-	body:lang(np) .entry.likes:not(.reddit-entry):before,
-	body:lang(np) .entry.dislikes:not(.reddit-entry):before {
-		content: "Please do not vote or comment when you come from external subreddits.";
-		display: block;
-		color: red;
+		background-color: #e05d6f;
+		padding: 7px 20px;
+		margin: 10px 0 10px 10px;
+		border: 1px solid #dc485c;
+color: #fff;
 		font-size: small; }
 
 /* Attempts to disrupt RES from hiding CSS styles */
@@ -2292,7 +2292,12 @@ border-bottom: 1px solid #dcdcdc;
 	.RESDialogSmall.livePreview .gearIcon { margin-top: -12px; margin-right: 0!important; background-color: rgba(0,0,0,.1)!important; height: 40px!important; }
 
 /* Promoted Links */
-	.organic-listing { border: solid 1px rgba(0,0,0,.1); border-left: 0; border-top: 0; border-right: 0;  margin-left: 5px; }
+	.organic-listing {
+border: 0;
+margin-left: 5px;
+-webkit-box-shadow: 0 5px 5px -5px rgba(0,0,0,0.1);
+-moz-box-shadow: 0 5px 5px -5px rgba(0,0,0,0.1);
+box-shadow: 0 5px 5px -5px rgba(0,0,0,0.1); }
 	.organic-listing .link, .organic-listing .link.compressed, .organic-listing .link.promotedlink { padding-right: 0; padding-left: 0; }
 	.organic-listing .link .midcol { margin-left: 0; border-right: 1px solid rgba(0,0,0,.1); }
 	.link.promotedlink { padding: 0; }
@@ -2300,7 +2305,8 @@ border-bottom: 1px solid #dcdcdc;
 	.link.promotedlink .flat-list { margin-left: 0; border-left: 0; }
 	.link.promotedlink p.title,
 	.link.promotedlink .entry .tagline { margin-left: 15px; }
-	.link.promotedlink .flat-list { background: #dbedff; }
+	.link.promotedlink .flat-list { background: #dbedff; border-top: 1px solid rgba(0,0,0,.05)}
+.link.promotedlink .entry .buttons li { border-right: 1px solid rgba(0,0,0,.05); }
 	.link.promotedlink .entry .buttons li a { color: #00468d!important; }
 	.organic-listing .sponsored-tagline {
 		right: 0;
@@ -2310,3 +2316,6 @@ border-bottom: 1px solid #dcdcdc;
 		color: #fff;
 		padding: 0 5px; }
 	.link.promotedlink .midcol.unvoted { background: #c8e3ff; }
+
+	.login-form-side { border: 0; }
+a.author { margin-right: 0; }
